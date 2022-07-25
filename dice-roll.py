@@ -13,11 +13,11 @@ ____   \\\\/___/                      | | | '_ \ / _ \ | |_) / _ \/ __|/ _ \\   
 \   \ -//                           | | | | | |  __/ |  _ < (_) \__ \  __/                          \   \ -//
  \___\//-                           |_| |_| |_|\___| |_| \_\___/|___/\___|                           \___\//-
     -//                                                                                                 -//
-     \\\\                                                                                                  \\\\
-     //                                                                                                  //
-    //-                                                                                                 //-
-  -//                                                                                                 -//
-  //                                                                                                  //
+     \\\\                                          RULES:                                                  \\\\
+     //                        1. The name of the game is petals around the rose.                        //
+    //-                        2. Rule 1 is your only hint.                                             //-
+  -//                          3. You have 3 guesses per roll.                                        -//
+  //                           4. Do not share the secert.                                            //
 """)
 
 min = 1
@@ -57,7 +57,7 @@ while roll == "y":
     row = 0
     while row < 5:
         for die in diceRoll:
-            print(die[row], end="\t")
+            print("\t" + die[row], end="\t")
         print("\r")
         row = row + 1
 
