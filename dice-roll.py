@@ -1,32 +1,42 @@
+import os
 import random
 
 min = 1
 max = 6
 
 roll = input("Want to roll the dice, y/n?")
-one = "-----" + "\n" + "|   |" + "\n" + "| * |" + "\n" + "|   |" + "\n" + "-----"
-two = "-----" + "\n" + "|*  |" + "\n" + "|   |" + "\n" + "|  *|" + "\n" + "-----"
-three = "-----" + "\n" + "|*  |" + "\n" + "| * |" + "\n" + "|  *|" + "\n" + "-----"
-four = "-----" + "\n" + "|* *|" + "\n" + "|   |" + "\n" + "|* *|" + "\n" + "-----"
-five = "-----" + "\n" + "|* *|" + "\n" + "| * |" + "\n" + "|* *|" + "\n" + "-----"
-six = "-----" + "\n" + "|* *|" + "\n" + "|* *|" + "\n" + "|* *|" + "\n" + "-----" 
+one = ["-----", "|   |", "| * |", "|   |", "-----"]
+two = ["-----", "|*  |", "|   |", "|  *|", "-----"]
+three = ["-----", "|*  |", "| * |", "|  *|", "-----"]
+four = ["-----", "|* *|", "|   |", "|* *|", "-----"]
+five = ["-----", "|* *|", "| * |", "|* *|", "-----"]
+six = ["-----", "|* *|", "|* *|", "|* *|", "-----"] 
+
+diceRoll = []
 
 while roll == "y":
     i = 0
     while i < 6:
         num = random.randint(min, max)
         if num == 1:
-            print(one, end="")
+            diceRoll.append(one)
         elif num == 2:
-            print(two, end="")
+            diceRoll.append(two)
         elif num == 3:
-            print(three, end="")
+            diceRoll.append(three)
         elif num == 4:
-            print(four, end="")
+            diceRoll.append(four)
         elif num == 5:
-            print(five, end="")
+            diceRoll.append(five)
         else:
-            print(six, end="")
+            diceRoll.append(six)
         i += 1
-    print("-----")
+
+    row = 0
+    while row < 5:
+        for die in diceRoll:
+            print(die[row], end="\t")
+        print("\r")
+        row = row + 1
+    
     roll = input("Want to roll the dice?")
