@@ -1,32 +1,30 @@
 import random
 
-move = input("What move do you want to play? ")
-
-print("rock" + "\n" + "paper" + "\n" + "scissors" + "\n" + "SHOOT!" + "\n")
+move = input("rock" + "\n" + "paper" + "\n" + "scissors" + "\n" + "SHOOT!" + "\n" + "--> ")
 
 min = 1
 max = 3
 num = random.randint(min, max)
 
 if num == 1:
-    print("rock " + move)
-    if move == "sissors":
+    print("rock ")
+    if move == "scissors":
         print("you lose!")
     elif move == "rock":
         print("draw")
     elif move == "paper":
         print("you win!")
 elif num == 2:
-    print("paper " + move)
-    if move == "sissors":
+    print("paper ")
+    if move == "scissors":
         print("you lose!")
     elif move == "rock":
         print("you win!")
     elif move == "paper":
         print("draw")
-elif num == 3:
-    print("scissors " + move)
-    if move == "sissors":
+else:
+    print("scissors ")
+    if move == "scissors":
         print("draw")
     elif move == "rock":
         print("you lose!")
